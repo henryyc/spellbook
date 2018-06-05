@@ -2,23 +2,34 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Spellbook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
 </head>
-
 <body>
-  <h1>Spellbook</h1>
-  <h1 id="title-two">Woobly Doobly</h1>
-  <h1>Sectumsempra</h1>
+  <img src="skull.png" id="skull" alt="">
+  <img src="quill.png" id="quill" alt="">
 
-  <button>Change Text</button>
+  <h1>Spellbook</h1>
 
   <form>
-    <input type="text">
-    <input type="submit" value="submit">
+    <div>
+      <input
+        type="text"
+        name="spellName"
+        id="sName"
+        placeholder="Enter a spell name and mana cost"
+        autofocus
+      >
+      <input type="range" min="1" max="100" value="50" class="slider" id="mCost">
+      <button type="submit">Add</button>
+    </div>
   </form>
+
+  <main>
+    <ul id="spells"></ul>
+  </main>
 
   <script src="index.js"></script>
 </body>
