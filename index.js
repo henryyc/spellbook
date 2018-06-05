@@ -1,5 +1,5 @@
 const form = document.querySelector("form");
-const avgSpellLength = 10.2; //src: https://arxiv.org/pdf/1208.6109.pdf, multiplied by 2
+const avgSpellLength = 15.3; //src: https://arxiv.org/pdf/1208.6109.pdf, multiplied by 3
 const manaRange = document.getElementById("mCost").max - document.getElementById("mCost").min + 1;
 
 function taskExecution(e) {
@@ -20,7 +20,7 @@ function getSpellInfo(info) {
 
 	const spellName = document.getElementById("sName").value;
 	spellInfo.appendChild(document.createTextNode(spellName + ": \t"));
-	spellInfo.style.color = "rgb(" + spellName.length/avgSpellLength*255 + ", 0, 0)";
+	spellInfo.style.color = "rgba(255, 0, 0, " + (spellName.length/avgSpellLength + 0.25) + ")";
 
 	getManaInfo(info, spellInfo);
 }
@@ -32,7 +32,7 @@ function getManaInfo(info, spellInfo) {
 
 	const manaCost = document.getElementById("mCost").value;
 	manaInfo.appendChild(document.createTextNode(manaCost + " mana"));
-	manaInfo.style.color = "rgb(0, 0, " + manaCost/manaRange*255 + ")";
+	manaInfo.style.color = "rgba(0, 0, 255," + (manaCost/manaRange + 0.25) + ")";
 
 	wrapUp(info, spellInfo, manaInfo);
 }
@@ -43,8 +43,8 @@ function wrapUp(info, spellInfo, manaInfo) {
 	info.appendChild(manaInfo);
 	document.getElementById("spells").appendChild(info);
 
-	//soft reset form
-	//document.getElementById("sName").value = '';
+	//reset form
+	form.reset();
 }
 
 form.addEventListener("submit", taskExecution);

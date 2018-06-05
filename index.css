@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans%7CHomemade+Apple%7CUnifrakturCook:700');
 
 body {
-  background: url(wood.jpg);
+  background: url(imgs/wood.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -109,7 +109,7 @@ button[type="submit"]:hover {
 
 main {
   box-sizing: border-box;
-  background-image: url(parchment.jpg);
+  background-image: url(imgs/parchment.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 50vw;
@@ -118,7 +118,7 @@ main {
   overflow-y: scroll;
   font-family: "Homemade Apple", cursive;
   font-size: 2rem;
-  /* color: rgba(100, 50, 0, 0.8); */
+  color: rgba(100, 50, 0, 0.8);
   padding: 1.5rem 4rem;
   box-shadow: 1px 1px 15px  rgba(0,0,0,0.4);
 }
