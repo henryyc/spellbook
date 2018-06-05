@@ -10,7 +10,7 @@ document.querySelector("button").addEventListener("click", changeText);
 const form = document.querySelector("form");
 function dostuff(e){
   e.preventDefault();
-  document.getElementById("title-three").textContent = form.querySelector("input").value;
+  document.getElementById("title-two").textContent = form.querySelector("input").value;
   return false;
 }
 
