@@ -2,6 +2,8 @@ const form = document.querySelector("form");
 const avgSpellLength = 15.3; //src: https://arxiv.org/pdf/1208.6109.pdf, multiplied by 3
 const manaRange = document.getElementById("mCost").max - document.getElementById("mCost").min + 1;
 
+let allSpells = [];
+
 function taskExecution(e) {
   e.preventDefault();
 
@@ -41,6 +43,17 @@ function wrapUp(info, spellInfo, manaInfo) {
 	//add all info to the list
 	info.appendChild(spellInfo);
 	info.appendChild(manaInfo);
+
+	//add delete option
+	const deleteButton = document.createElement("button");
+	deleteButton.appendChild(document.createTextNode("X"));
+	deleteButton.addEventListener("click", () => {
+		document.getElementById("spells").removeChild(info);
+		allSpells.splice(allSpells.indexOf(info), 1);
+	});
+	info.appendChild(deleteButton);
+
+	allSpells.push(info);
 	document.getElementById("spells").appendChild(info);
 
 	//reset form
