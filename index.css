@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans%7CHomemade+Apple%7CUnifrakturCook:700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Homemade+Apple|UnifrakturCook:700');
 
 body {
   background: url(imgs/wood.jpg);
@@ -46,8 +46,9 @@ form > div {
   align-items: stretch;
 }
 
-input[type="text"] {
-  flex: 1 1 0px;
+input[type="text"],
+input[type="number"] {
+  flex: 4 1 0;
   height: auto;
   min-width: 0;
   display: block;
@@ -66,7 +67,8 @@ input[type="text"] {
   appearance: none;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="number"]:focus {
   outline: 0;
   border: 1px solid #8a8a8a;
   background-color: #fefefe;
@@ -133,14 +135,52 @@ ul#spells {
   margin-top: -1rem;
 }
 
-.spellName {
-  color: red;
+input.small {
+  flex-grow: 1;
 }
 
-.manaCost {
-  color: blue;
+.spell {
+  display: flex;
+  justify-content: space-between;
 }
 
-#li {
-  justify-content: space-around;
+.spell .name {
+  width: 70%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  padding-left: 0.1em;
+  white-space: nowrap;
+}
+.cost {
+  color: cornflowerblue;
+  width: 30%;
+  padding: 0 0.25em;
+}
+
+button.delete {
+  background-color: #ff3333;
+  color: white;
+}
+
+button.fav {
+  background-color: #F8BE3D;
+  color: black;
+}
+
+button.convert {
+  background-color: #CF9DE0;
+  color: black;
+}
+
+button.move {
+  background-color: #3366ff;
+  color: white;
+}
+
+.spell.fav {
+  background-color: goldenrod;
+}
+
+.template {
+  display: none;
 }

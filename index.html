@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Spellbook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
 </head>
 <body>
@@ -18,18 +19,46 @@
       <input
         type="text"
         name="spellName"
-        id="sName"
-        placeholder="Enter a spell name and mana cost"
+        placeholder="Enter a spell name"
         autofocus
       >
-      <input type="range" min="1" max="100" value="50" class="slider" id="mCost">
+      <input
+        type="range"
+        name="cost"
+        id="cost"
+        class="slider"
+        value="50"
+        min="1"
+        max="100"
+      >
       <button type="submit">Add</button>
     </div>
   </form>
 
   <main>
-    <ul id="spells"></ul>
+    <ul id="spells">
+    </ul>
   </main>
+
+  <li class="spell template">
+    <span class="name"></span>
+    <span class="cost"></span>
+    <button class="delete">
+        <i class="far fa-trash-alt" title="remove"></i>
+    </button>
+    <button class="move up">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <button class="move down">
+        <i class="fas fa-arrow-down"></i>
+    </button>
+    <button class="convert">
+        <i class="fa fa-gg-circle" title="convert"></i>
+    </button>
+    <button class="fav">
+        <i class="fas fa-star" title="favorite"></i>
+    </button>
+  </li>
 
   <script src="index.js"></script>
 </body>
