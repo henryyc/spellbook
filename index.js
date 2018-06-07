@@ -199,6 +199,10 @@ class App {
       item.getElementsByClassName("cost")[0].style.color = "rgba(0, 0, 255," + (this.extractCost(spell.cost)/costRange) + ")"
     }
 
+    //updating html display
+    item.getElementsByClassName("cost")[0].setAttribute("title", spell.cost)
+    item.getElementsByClassName("cost")[0].textContent = spell.cost
+
     this.save()
   }
 
